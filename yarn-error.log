@@ -1,0 +1,41 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Iago\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bcryot-nodejs
+
+PATH: 
+  C:\Users\Iago\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Iago\bin;C:\Windows\System32;C:\Program Files\Java\jdk1.8.0_211;C:\Android\SDK\platform-tools;C:\Android\SDK\tools;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Windows\System32;C:\Program Files\PostgreSQL\11\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Python27;C:\wamp64\bin\php\php5.6.40;C:\Program Files\Java\jdk1.8.0_211;C:\Android\SDK\platform-tools;C:\Android\SDK\tools;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Windows\System32;C:\Program Files\PostgreSQL\11\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Python27;C:\wamp64\bin\php\php5.6.40;C:\Program Files\Java\jdk1.8.0_211;C:\Android\SDK\platform-tools;C:\Android\SDK\tools;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Windows\System32;C:\Program Files\PostgreSQL\11\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Python27;C:\wamp64\bin\php\php5.6.40;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Iago\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Iago\AppData\Local\Yarn\bin;C:\Users\Iago\AppData\Roaming\npm;C:\Users\Iago\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  12.4.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/bcryot-nodejs: Not found
+      at Request.params.callback [as _callback] (C:\Users\Iago\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66091:18)
+      at Request.self.callback (C:\Users\Iago\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:129590:22)
+      at Request.emit (events.js:200:13)
+      at Request.<anonymous> (C:\Users\Iago\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:130562:10)
+      at Request.emit (events.js:200:13)
+      at IncomingMessage.<anonymous> (C:\Users\Iago\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:130484:12)
+      at Object.onceWrapper (events.js:288:20)
+      at IncomingMessage.emit (events.js:205:15)
+      at endReadableNT (_stream_readable.js:1154:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+npm manifest: 
+  {
+    "name": "node-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
