@@ -34,13 +34,13 @@ module.exports = app => {
         user.password = encryptPassword(user.password);
         delete user.confirmPassword;
 
-        if (user.id) {
+        if (user.id) { //UPDATE
             app.db('users')
                 .update(user)
                 .where({ id: user.id })
                 .then(_ => res.status(204).send())
                 .catch(err => res.status(500).send(err))
-        } else {
+        } else { //CREATE
             app.db('users')
                 .insert(user)
                 .then(_ => res.status(204).send())
@@ -61,14 +61,10 @@ module.exports = app => {
         app.db('users')
             .select('id', 'name', 'email', 'admin', 'dev')
             .where({ id: userId })
-            .then(users => res.json(users))
+            .first()
+            .then(user => res.json(user))
             .catch(err => res.status(500).send(err))
     }
-
-
-
-
-
 
     return { save, get, getById }
 }
