@@ -5,6 +5,9 @@ exports.up = function (knex) {
         table.integer('parentId').unsigned().notNullable();
         table.string('name').notNull()
         table.string('uri').notNull()
+        table.boolean('seoActive').notNull().defaultTo(false)
+        table.string('seoTitle', 60)
+        table.string('seoDescription', 170)
         table.boolean('deleted').notNull().defaultTo(false)
 
         table.foreign('parentId').references('id').inTable('pages');

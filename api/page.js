@@ -10,6 +10,7 @@ module.exports = app => {
 
         try {
             existsOrError(page.name, 'Nome não informado');
+            existsOrError(page.uri, 'URI não informada')
         } catch (msg) {
             return res.status(400).send(msg);
         }
@@ -18,7 +19,7 @@ module.exports = app => {
             app.db('pages')
                 .update(page)
                 .where({ id: page.id })
-                .then(() => res.send(200).send('Página atualizada!'))
+                .then(() => res.sendStatus(200))
                 .catch(err => res.status(500).send(err))
         } else { //CREATE
             app.db('pages')
