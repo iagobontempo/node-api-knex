@@ -98,5 +98,5 @@ module.exports = app => {
     }
 
 
-    return { save, get, getById, getWithPagination, remove }
+    return { save, get, getById, remove }
 }
