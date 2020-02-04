@@ -1,4 +1,5 @@
 # API
+- Continuar aula para arrumar corretamente o código, ver exemplo de soft delete, .env e validar administradores
 - Adicionar **order em todas as tabelas e fazer sempre vir ordenado por esta ordem**
 - Fazer **soft delete**
 - Criar as migrations de **fields** e **fields type** `(rever esta parte, nomes como será implementado)`
@@ -18,3 +19,4 @@
 Extras:
 - Pensar em uma pagina inicial/dashboard com Stats
 - Pensar em um jeito de criar um arquivo de constantes `???`
+- Pensar o que posso usar com node-schedule p/ dashboard
