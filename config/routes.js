@@ -1,3 +1,6 @@
+const ADMIN = require('../library/admin');
+const DEV = require('../library/dev');
+
 module.exports = app => {
     //! ** AUTHENTICATION ** //
     app.post('/signup', app.api.user.save)
@@ -6,38 +9,38 @@ module.exports = app => {
 
     //! ** USERS ** //
     app.route('/users')
-        .all(app.config.passport.authenticate())
-        .get(app.api.user.get)
-        .post(app.api.user.save)
+        .all(app.library.passport.authenticate())
+        .get(ADMIN(app.api.user.get))
+        .post(ADMIN(app.api.user.save))
 
     app.route('/users/:id')
-        .all(app.config.passport.authenticate())
-        .get(app.api.user.getById)
-        .put(app.api.user.save)
+        .all(app.library.passport.authenticate())
+        .get(ADMIN(app.api.user.getById))
+        .put(DEV(app.api.user.save))
 
     //! ** PAGES ** //
     app.route('/pages')
         .get(app.api.page.get)
-        .post(app.config.passport.authenticate())
-        .post(app.api.page.save)
+        .post(app.library.passport.authenticate())
+        .post(ADMIN(app.api.page.save))
 
     app.route('/pages/:id')
         .get(app.api.page.getById)
-        .put(app.config.passport.authenticate())
-        .put(app.api.page.save)
-        .delete(app.config.passport.authenticate())
-        .delete(app.api.page.remove) //Voltar para adicionar soft delete (ficará no metodo save)
+        .put(app.library.passport.authenticate())
+        .put(ADMIN(app.api.page.save))
+        .delete(app.library.passport.authenticate())
+        .delete(DEV(app.api.page.remove)) //Voltar para adicionar soft delete (ficará no metodo save)
 
     //! ** INTERNAL PAGES ** //
     app.route('/pages/:parentId/internal')
         .get(app.api.internalPage.get)
-        .post(app.config.passport.authenticate())
-        .post(app.api.internalPage.save)
+        .post(app.library.passport.authenticate())
+        .post(ADMIN(app.api.internalPage.save))
 
     app.route('/pages/:parentId/internal/:id')
         .get(app.api.internalPage.getById)
-        .put(app.config.passport.authenticate())
-        .put(app.api.internalPage.save)
-        .delete(app.config.passport.authenticate())
-        .delete(app.api.internalPage.remove)
+        .put(app.library.passport.authenticate())
+        .put(ADMIN(app.api.internalPage.save))
+        .delete(app.library.passport.authenticate())
+        .delete(DEV(app.api.internalPage.remove))
 }
