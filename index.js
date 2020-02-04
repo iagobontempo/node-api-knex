@@ -6,6 +6,7 @@ app.db = db;
 
 
 consign()
+    .include('./config/passport.js')
     .then('./config/middlewares.js')
     .then('./library')
     .then('./api')
