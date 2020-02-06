@@ -20,3 +20,5 @@ Extras:
 - Pensar em uma pagina inicial/dashboard com Stats
 - Pensar em um jeito de criar um arquivo de constantes `???`
 - Pensar o que posso usar com node-schedule p/ dashboard
+
+Adicionar comandos para iniciar servidor, compilar tudo etc
