@@ -4,7 +4,7 @@ exports.up = function (knex) {
         table.increments('id').primary()
         table.string('name').notNull()
         table.string('uri').notNull()
-        table.boolean('status').notNull().defaultTo(true)
+        table.boolean('status').notNull().defaultTo(false)
         table.string('seoTitle', 60)
         table.string('seoDescription', 170)
         table.boolean('deleted').notNull().defaultTo(false)

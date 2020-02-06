@@ -7,7 +7,7 @@ module.exports = {
   connection: {
     host: 'localhost',
     user: 'root',
-    password: 'password',
+    password: '123456',
     database: 'node_api'
   },
   pool: {
