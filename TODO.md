@@ -20,3 +20,9 @@ Extras:
 - Pensar em uma pagina inicial/dashboard com Stats
 - Pensar em um jeito de criar um arquivo de constantes `???`
 - Pensar o que posso usar com node-schedule p/ dashboard
+
+
+#
+- Para rodar as seeds: ```knex seed:run```
+
+- Para rodar as migrations: ```knex migrate:latest``` ou ```knex migrate:rollback```

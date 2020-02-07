@@ -7,6 +7,19 @@ module.exports = app => {
     app.post('/signin', app.api.auth.signin)
     app.post('/validateToken', app.api.auth.validateToken)
 
+    //! ** CONFIG ** //
+    app.route('/config')
+        .get(app.api.config.get)
+        .put(app.library.passport.authenticate())
+        .put(ADMIN(app.api.config.save))
+    
+    //! ** DEV CONFIG ** //
+    app.route('/devConfig')
+        .get(app.api.devConfig.get)
+        //.get(app.api.devConfig.getLock) ! Como fazer para os dados sensiveis serem pegos apenas pelo servico??? Servico de email etc
+        .put(app.library.passport.authenticate())
+        .put(ADMIN(app.api.devConfig.save))
+
     //! ** USERS ** //
     app.route('/users')
         .all(app.library.passport.authenticate())

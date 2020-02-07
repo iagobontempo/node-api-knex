@@ -2,8 +2,8 @@
 exports.up = function (knex) {
     return knex.schema.createTable('config', table => {
         table.increments('id').primary()
-        table.string('siteName').defaultTo('Nome do site')
-        table.string('siteTitle').defaultTo('Titulo do site')
+        table.string('siteName')
+        table.string('siteTitle')
         table.string('logo')
         table.string('logoFooter')
         table.string('favicon')
@@ -15,7 +15,6 @@ exports.up = function (knex) {
         table.string('youtube')
         table.string('email')
         table.string('instagram')
-        table.string('messageEmails')
     })
 };
 
