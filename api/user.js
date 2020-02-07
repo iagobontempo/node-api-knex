@@ -15,6 +15,16 @@ module.exports = app => {
             user.id = req.params.id;
         }
 
+        //PROTEGENDO PARA SER CRIADO USUARIOS DIRETAMENTE COM ADMIN OU DEV
+        if(!req.originalUrl.startsWith('/users')) {
+            user.admin = false;
+            user.dev = false;
+        }
+        if(!req.user || !req.user.admin || !req.user.dev) {
+            user.admin = false;
+            user.dev = false;
+        }
+
         try {
             existsOrError(user.name, 'Nome não informado');
             existsOrError(user.email, 'Email não informado');

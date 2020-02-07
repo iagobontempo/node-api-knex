@@ -1,15 +1,8 @@
-// Update with your config settings.
-
+const { db } = require('./.env');
 module.exports = {
-
   client: 'mysql',
   version: '5.7',
-  connection: {
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'node_api'
-  },
+  connection: db,
   pool: {
     min: 2,
     max: 10
@@ -17,6 +10,4 @@ module.exports = {
   migrations: {
     tableName: '_knex_migrations'
   }
-
-
 };
