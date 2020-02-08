@@ -12,7 +12,7 @@ module.exports = app => {
         .get(app.api.config.get)
         .put(app.library.passport.authenticate())
         .put(ADMIN(app.api.config.save))
-    
+
     //! ** DEV CONFIG ** //
     app.route('/devConfig')
         .get(app.api.devConfig.get)
@@ -44,6 +44,12 @@ module.exports = app => {
         .delete(app.library.passport.authenticate())
         .delete(DEV(app.api.page.remove)) //Voltar para adicionar soft delete (ficará no metodo save)
 
+    //! ** PAGES FIELD ** //
+    app.route('/pages/:parentId/fields')
+        .get(app.api.fields.get) // Pegar os fields da page
+        .put(app.api.fields.save) // Update nos fields
+        .post(app.api.fields.save) // Criar fields da page
+
     //! ** INTERNAL PAGES ** //
     app.route('/pages/:parentId/internal')
         .get(app.api.internalPage.get)
@@ -56,4 +62,10 @@ module.exports = app => {
         .put(ADMIN(app.api.internalPage.save))
         .delete(app.library.passport.authenticate())
         .delete(DEV(app.api.internalPage.remove))
+
+    //! ** INTERNAL PAGES FIELD ** //
+    app.route('/pages/:parentId/internal/fields')
+        .get(app.api.fields.getInternal) // Pegar os fields da page interna
+        .put(app.api.fields.saveInternal) // Update nos fields interna
+        .post(app.api.fields.saveInternal) // Criar fields da page interna
 }
