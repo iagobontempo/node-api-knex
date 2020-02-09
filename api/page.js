@@ -39,6 +39,7 @@ module.exports = app => {
 
     function getById(req, res) {
         const pageId = req.params.id
+
         app.db('pages')
             .select('id', 'name', 'uri', 'status', 'seoTitle', 'seoDescription', 'deleted')
             .where({ id: pageId, deleted: false })

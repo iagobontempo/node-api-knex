@@ -61,7 +61,6 @@ module.exports = app => {
 
 
 
-
     //! ** INTERNAL PAGES ** //
     app.route('/pages/:parentId/internal')
         .get(app.api.internalPage.get)
@@ -78,4 +77,11 @@ module.exports = app => {
         .get(app.api.fields.getInternal)
         .put(app.api.fields.saveInternal)
         .post(app.api.fields.saveInternal)
+
+    //! ** VALUES ** //
+    app.route('/pages/:parentId/fields/value')
+        .get(app.api.values.get)
+        .put(app.api.values.save)
+        .post(app.api.values.save)
+
 }

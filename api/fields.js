@@ -45,7 +45,7 @@ module.exports = app => {
         }
 
         app.db('fields')
-            .select('parentId', 'internal', 'type', 'name', 'label')
+            .select('id', 'parentId', 'internal', 'type', 'name', 'label')
             .where({ parentId: req.params.parentId })
             .then(fields => res.json(fields))
             .catch(err => res.status(500).send(err))
@@ -88,7 +88,6 @@ module.exports = app => {
         }
     }
 
-    //! RETORNAR AQUI
     async function getInternal(req, res) {
 
         try {
@@ -98,7 +97,7 @@ module.exports = app => {
         }
 
         app.db('fields')
-            .select('parentId', 'internal', 'type', 'name', 'label')
+            .select('id', 'parentId', 'internal', 'type', 'name', 'label')
             .where({ parentId: req.params.parentId, internal: true })
             .then(fields => res.json(fields))
             .catch(err => res.status(500).send(err))
