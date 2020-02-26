@@ -7,10 +7,10 @@ module.exports = app => {
         //UPDATE
         app.db('dev_config')
             .update(config)
-            .where({ id: 1})
+            .where({ id: 1 })
             .then(() => res.sendStatus(200))
             .catch(err => res.status(500).send(err))
-        
+
     }
 
     function get(req, res) {
@@ -27,6 +27,6 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
-    return { save, get  }
+    return { save, get }
 
 }
